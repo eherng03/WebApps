@@ -1,0 +1,109 @@
+body{
+    margin: 0;
+    font-family: "Arial";
+}
+
+header{
+    display: block;
+    position: fixed;
+    top: 0 !importante;
+    top: -1px;
+    right: 0px;
+    left: 0px;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333; 
+    top: 0px;
+    right: 0px;
+    left: 0px;
+}
+
+li {
+    float: left;
+}
+
+li a{
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 30px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #555555;
+}
+
+table{
+    border: 1px solid black;
+    border-collapse: collapse;
+    top: 20px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+th{
+    border: 1px solid black;
+    text-align: center;
+    padding: 8px;
+    font-size: 20px;
+    font-weight: bold;
+    
+}
+
+td{
+    border: 1px solid black;
+    text-align: left;
+    padding: 8px;
+}
+
+textarea{
+  margin: 0;
+  padding: 0;
+}
+
+footer{
+    display: block;
+    background-color: #000000;
+    color: white;
+    text-align: left;
+    padding: 14px 30px;
+    text-decoration: none;
+   
+    position: fixed;
+    bottom: 0 !importante;
+    bottom: -1px;
+    right: 0px;
+    left: 0px;
+}
+
+
+
+.cabecera{
+    margin: 0;
+    padding: 20px 30px;
+    overflow: hidden;
+    background-color: #929292; 
+    color: white;
+    font-size: 40px;
+}
+
+.cuerpo{
+    display: block;
+    margin: 55px;
+}
+
+.submitButton{
+    display: block;
+    margin-top: 15px;
+    color: white;
+    background-color: #001EFF;
+    padding: 10px 24px;
+    font-size: 15px;
+}
+
