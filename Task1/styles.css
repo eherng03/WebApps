@@ -10,17 +10,32 @@ header{
     top: -1px;
     right: 0px;
     left: 0px;
+
+    margin: 0;
+    padding: 15px 50px;
+    overflow: hidden;
+    background-color: #929292; 
+    color: white;
+    font-size: 40px;
+}
+nav{
+    position: fixed;
+    display: block;
+    top: 60px;
+    right: 0px;
+    left: 0px;
+
 }
 
 ul {
     list-style-type: none;
-    margin: 0;
-    padding: 0;
     overflow: hidden;
     background-color: #333; 
-    top: 0px;
-    right: 0px;
-    left: 0px;
+    margin: 1;
+    padding: 0;
+    padding-left: 25px;
+
+    
 }
 
 li {
@@ -51,8 +66,7 @@ th{
     border: 1px solid black;
     text-align: center;
     padding: 8px;
-    font-size: 20px;
-    font-weight: bold;
+
     
 }
 
@@ -72,7 +86,7 @@ footer{
     background-color: #000000;
     color: white;
     text-align: left;
-    padding: 14px 30px;
+    padding: 14px 50px;
     text-decoration: none;
    
     position: fixed;
@@ -82,20 +96,9 @@ footer{
     left: 0px;
 }
 
-
-
-.cabecera{
-    margin: 0;
-    padding: 20px 30px;
-    overflow: hidden;
-    background-color: #929292; 
-    color: white;
-    font-size: 40px;
-}
-
-.cuerpo{
+section{
     display: block;
-    margin: 55px;
+    padding:145px 50px;
 }
 
 .submitButton{
@@ -105,5 +108,10 @@ footer{
     background-color: #001EFF;
     padding: 10px 24px;
     font-size: 15px;
+}
+
+.lblTitulo{
+    font-size: 20px;
+    font-weight: bold;
 }
 
