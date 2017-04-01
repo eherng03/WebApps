@@ -5,8 +5,10 @@ $(document).ready(function(){
 		var checkName = '[name="'+ $(this).val() +'"]';		
 		if ($(this).prop('checked')) {
 			$(checkName).prop('checked', true);
+			$(checkName).trigger('change');					/*Force the checkbox to change*/
 		}else{
 			$(checkName).prop('checked', false);
+			$(checkName).trigger('change');					/*Force the checkbox to change*/
 		}
 	});
 
@@ -15,10 +17,10 @@ $(document).ready(function(){
 		var sibling = $(this).prev();
 		if($(sibling).prop('checked')){
 			$(sibling).prop('checked', false);
-			$('td').find('input').change();
+			$(sibling).trigger('change');					/*Force the checkbox to change*/
 		}else{
 			$(sibling).prop('checked', true);
-			$('td').find('input').change();
+			$(sibling).trigger('change');					/*Force the checkbox to change*/
 		}
 	});
 
@@ -32,10 +34,16 @@ $(document).ready(function(){
 			$('textarea').val('');
 			$('input[class = "sons"]:checked').each(function(){
 				var str = $('textarea').val();
-				$('textarea').val(str + '\n' + $(this).next().text());
+				$('textarea').val(str + $(this).next().text() + '\n');
 			})
+		}
+	});
 
-
+	$('.submitButton').click(function() {
+		if($('input[class = "sons"]:checked').length == 0){
+			alert('Debe marcarse alguna opciom.');
+		}else{
+			/*post*/
 		}
 	});
 });
