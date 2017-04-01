@@ -10,16 +10,6 @@ $(document).ready(function(){
 		}
 	});
 
-	$('td').find('input').change(function() {
-		//mirar a ver si hay alguno seleccionado
-		if($(this).find(':checked').length == 0){
-			$("textarea").hide();
-		}else{
-			$('textarea').show();
-//https://api.jquery.com/change/
-
-		}
-	});
 
 	$('label').click(function() {
 		var sibling = $(this).prev();
@@ -33,4 +23,19 @@ $(document).ready(function(){
 	});
 
 
+	$('.sons').change(function() {
+		//mirar a ver si hay alguno seleccionado
+		if($('input[class = "sons"]:checked').length == 0){
+			$("textarea").hide();
+		}else{
+			$('textarea').show();
+			$('textarea').val('');
+			$('input[class = "sons"]:checked').each(function(){
+				var str = $('textarea').val();
+				$('textarea').val(str + '\n' + $(this).next().text());
+			})
+
+
+		}
+	});
 });
