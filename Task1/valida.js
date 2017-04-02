@@ -41,7 +41,7 @@ $(document).ready(function(){
 
 	$('.submitButton').click(function() {
 		if($('input[class = "sons"]:checked').length == 0){
-			alert('Debe marcarse alguna opciom.');
+			alert('Debe marcarse alguna opción.');
 		}else{
 			/*post*/
 		}
