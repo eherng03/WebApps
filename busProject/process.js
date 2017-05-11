@@ -1,18 +1,14 @@
 $(document).ready(function() {
 
-    $('#login').click(function() {
+    $.get("selectDestino.php", function(data) {
+        var comboBox = document.getElementById("destinos");
+        var destinos = JSON.parse(data);
 
-        var datosFormulario = new FormData(document.getElementById('formulario'));
-        var req = new XMLHttpRequest();
-
-        req.open("POST", "envio.php", true);
-        req.onreadystatechange = function(){
-            if(req.readyState == 4 && req.status == 200){
-                alert(req.responseText);
-            }
-        }
-
-        req.send(datosFormulario);
+        destinos.forEach((destino) =>{
+            var opt = document.createElement('option');
+            opt.value = destino.plazas;
+            opt.innerHTML = destino.ciudad;
+            comboBox.appendChild(opt);
+        });
     });
-
 });

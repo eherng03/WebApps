@@ -1,45 +1,59 @@
-.squaredOne {
-  width: 28px;
-  height: 28px;
-  position: relative;
-  margin: 20px auto;
-  background: #fcfff4;
-  background: linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
-  box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0,0,0,0.5);
-  label {
-    width: 20px;
-    height: 20px;
-    position: absolute;
-    top: 4px;
-    left: 4px;
-    cursor: pointer;
-    background: linear-gradient(top, #222 0%, #45484d 100%);
-    box-shadow: inset 0px 1px 1px rgba(0,0,0,0.5), 0px 1px 0px rgba(255,255,255,1);
-    &:after {
-      content: '';
-      width: 16px;
-      height: 16px;
-      position: absolute;
-      top: 2px;
-      left: 2px;
-      background: $activeColor;
-      background: linear-gradient(top, $activeColor 0%, $darkenColor 100%);
-      box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0,0,0,0.5);
-      opacity: 0;
-    }
-    &:hover::after {
-      opacity: 0.3;
-    }
-  }
-  input[type=checkbox] {
-    visibility: hidden;
-    &:checked + label:after {
-      opacity: 1;
-    }   
-  } 
+@import url('https://fonts.googleapis.com/css?family=Quicksand');
+
+body{
+    margin: 20px;
+    font-family: 'Quicksand', sans-serif;
 }
-/* end .squaredOne */
+
+div { 
+    margin-top: 20px; 
+    margin-bottom: 40px; 
+    margin-left: 40px; 
+    margin-right: 40px; 
+    display: block;
+}
+
+.bus{
+    border: 1px solid black;
+    width: 600px;
+    height: 150px;
+    background: #83B5FF;
+    -moz-border-radius: 20px; 
+    -webkit-border-radius: 20px; 
+    border-radius: 20px;
+}
+
+
+.estilo-select select {
+    background: transparent;
+    background-image: none;
+    box-shadow: none;
+    width: 300px;
+    padding: 5px;
+    font-size: 16px;
+    line-height: 1;
+    border: 0;
+    border-radius: 0;
+    height: 34px;
+    -webkit-appearance: none;
+}
+
+.estilo-select{
+    width: 282px;
+    height: 34px;
+    overflow: hidden;
+    background: url(http://i62.tinypic.com/2e3ybe1.jpg) no-repeat right center;
+    border: 1px solid #ccc;
+}
+
+
 h1{
   color:#3F8BFD;
-  
+  text-align: center;
+  font-size: 35px;
+}
+
+h2{
+  text-align: center;
+  font-size: 20px;
 }
