@@ -1,1 +1,1 @@
-# AW.task1
+# Web Applications course folder.
