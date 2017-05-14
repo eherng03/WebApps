@@ -1,18 +1,28 @@
 $(document).ready(function() {
+    $$('.dynamic').hide();
 
-    $('#login').click(function() {
+    $.get("selectDestino.php", function(data) {
+        var comboBox = document.getElementById("destinos");
+        var destinos = JSON.parse(data);
 
-        var datosFormulario = new FormData(document.getElementById('formulario'));
-        var req = new XMLHttpRequest();
-
-        req.open("POST", "envio.php", true);
-        req.onreadystatechange = function(){
-            if(req.readyState == 4 && req.status == 200){
-                alert(req.responseText);
-            }
-        }
-
-        req.send(datosFormulario);
+        destinos.forEach((destino) =>{
+            var opt = document.createElement('option');
+            opt.value = destino.ciudad;
+            opt.innerHTML = destino.ciudad;
+            comboBox.appendChild(opt);
+        });
     });
 
+    $('select').change(function(event) {
+       var destino = $(this).find(":selected").val();
+       if(destino === '-'){
+            $('.dynamic').fadeIn();
+       }else{
+
+       }
+       $.post("getPlazas.php", {ciudad: destino}, function(data, textStatus, xhr) {
+           /*optional stuff to do after success */
+       });
+    });
+    
 });
