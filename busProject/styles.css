@@ -1,8 +1,6 @@
-@import url('https://fonts.googleapis.com/css?family=Quicksand');
-
 body{
     margin: 20px;
-    font-family: 'Quicksand', sans-serif;
+    font-family: 'Arial';
 }
 
 div { 
@@ -23,12 +21,16 @@ div {
     border-radius: 20px;
 }
 
+legend{
+    padding: 5px;
+    margin-left: 5px;
+}
 
 .estilo-select select {
     background: transparent;
     background-image: none;
     box-shadow: none;
-    width: 300px;
+    width: 100%;
     padding: 5px;
     font-size: 16px;
     line-height: 1;
@@ -36,24 +38,27 @@ div {
     border-radius: 0;
     height: 34px;
     -webkit-appearance: none;
+    -moz-appearance: none;
 }
 
 .estilo-select{
-    width: 282px;
+    width: 90%;
     height: 34px;
     overflow: hidden;
     background: url(http://i62.tinypic.com/2e3ybe1.jpg) no-repeat right center;
     border: 1px solid #ccc;
 }
 
-
 h1{
-  color:#3F8BFD;
-  text-align: center;
-  font-size: 35px;
+    font-family: 'Arial';
+    color:#3F8BFD;
+    text-align: center;
+    font-size: 40px;
+    font-style: bold;
 }
 
 h2{
   text-align: center;
   font-size: 20px;
 }
+

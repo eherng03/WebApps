@@ -3,7 +3,7 @@ class BBDD{
    private static $instance;
    private static $conexion;
 
-    private function __construct(){}
+   private function __construct(){}
 
    public static function getInstance(){
       if (!self::$instance instanceof self){
