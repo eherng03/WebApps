@@ -23,20 +23,30 @@
 
 				<fieldset>
 					<legend>Seleccione los asientos</legend>
-					<div class = "bus">
-					 
+					<div id = "bus">
+					 	<table id = "plazas">
+					 	</table>
 					</div> 
+					<div id = "leyenda">
+						<div id ="libre"></div>
+						<label>Asiento libre</label>
+						<div id ="ocupado"></div>
+						<label>Asiento ocupado</label>
+						<div id ="seleccionado"></div>
+						<label>Asiento seleccionado</label>
+
+					</div>
 				</fieldset>
 				  
 
 				<fieldset>
 					<legend>Introduzca sus datos</legend>
-					<form id = "datosCliente">
-						<label for="nombre">Nombre</label>
-		    			<input type="text" id="nombre" placeholder="Nombre" />
-					    <label for="apellido1">Primer apellido</label>
-					    <input type="text" id="apellido1" placeholder="Password" />
-					</form>
+					 <form id="datosCliente">
+					      <input type="text" placeholder="Nombre completo*" class="textbox" />
+					      <input type="text" placeholder="NIF*" class="textbox" />
+					      <input type="text" placeholder="Email*" class="textbox" />
+					      <input type="button" value="Reservar" id="reservar" />
+    				</form>
 				</fieldset> 
 			</div>
 			
