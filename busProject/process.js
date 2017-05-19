@@ -37,6 +37,7 @@ $(document).ready(function() {
                         check.id = i;
                         var label = document.createElement('label');
                         label.id = 'botonAsiento';
+                        label.htmlFor = i;
                         label.appendChild(check);
                         var td = document.createElement('td');
                         td.appendChild(label);
@@ -57,6 +58,10 @@ $(document).ready(function() {
     $('#reservar').click(function() {
         var datosFormulario = new FormData(document.getElementById('datosCliente'));
        
+    });
+
+    $('input[type = checkbox]').click(function(event) {
+        
     });
     
 });

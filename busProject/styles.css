@@ -39,12 +39,9 @@ legend{
     margin-left: 5px;
 }
 
-input[type=checkbox]{
-    align-content: center;
-}
 
 table{
-    width: 90%;
+    width: 99%;
     height: 90%;
     margin: auto;
 }
@@ -111,6 +108,7 @@ option{
     border: 1px solid black;
     display: inline-block;
     margin-right: 5px;
+    border-radius: 4px;
 }
 
 #libre{
@@ -126,7 +124,7 @@ option{
 }
 
 #bus{
-    border: 1px solid black;
+    border: 2px solid #555;
     width: 70%;
     height: 150px;
     background: #83B5FF;
@@ -135,4 +133,30 @@ option{
     border-radius: 20px;
     margin:30px;
     display: flex;
+}
+
+#botonAsiento{
+    width: 25px;
+    height: 25px;
+    background: #FFFFFF;
+    display: block; 
+    float: left;
+    border: 2px solid #555;
+    border-radius: 7px;
+}
+
+   
+input[type=checkbox] + label{
+    display:inline-block;
+    width:19px;
+    height:19px; 
+    background:#FFFFFF left top no-repeat;  /*asiento no seleccionado*/
+}
+
+input[type=checkbox]:checked + label{
+    background:#FF6B6B;
+}
+
+.selected{
+    background: #FF6B6B;
 }
