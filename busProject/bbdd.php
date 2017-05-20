@@ -14,8 +14,8 @@ class BBDD{
 
    function openConectionBBDD(){
       $server = 'localhost';
-      $username = 'eva';
-      $password = 'autobuses';
+      $username = 'prueba';
+      $password = 'prueba';
       $database_name = 'autobuses';
       
       $this->conexion = new mysqli($server,$username,$password,$database_name);
@@ -41,6 +41,17 @@ class BBDD{
       $sql= "SELECT * from asientosocupados WHERE destino = '$ciudad'";
       $result = $this->conexion->query($sql);
       return $result;
+   }
+
+   function insertCliente($nombre, $nif, $email){
+      $sql  = "INSERT INTO clientes(nombre, dni, email) VALUES ('$nombre','$nif','$email')";
+      $result = $this->conexion->query($sql);
+      return $result;
+   }
+
+   function insertPlaza($destino, $asiento, $nif){
+      $sql  = "INSERT INTO asientosocupados(destino, plaza, dni) VALUES ('$destino','$asiento','$nif')";
+      $result = $this->conexion->query($sql);
    }
 }
 ?>

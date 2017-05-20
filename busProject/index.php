@@ -14,7 +14,7 @@
 				<legend>Destinos</legend>
 				<div class = "estilo-select slate">
 					<select id="destinos">
-		       			<option value = '0'>-</option>
+		       			<option>-</option>
 					</select>	  
 				</div> 
 			</fieldset>
@@ -42,9 +42,9 @@
 				<fieldset>
 					<legend>Introduzca sus datos</legend>
 					 <form id="datosCliente">
-					      <input type="text" placeholder="Nombre completo*" class="textbox" />
-					      <input type="text" placeholder="NIF*" class="textbox" />
-					      <input type="text" placeholder="Email*" class="textbox" />
+					      <input type="text" id = "nombre" placeholder="Nombre completo*" class="textbox" />
+					      <input type="text" id = "nif" placeholder="NIF*" class="textbox" />
+					      <input type="text" id = "email" placeholder="Email*" class="textbox" />
 					      <input type="button" value="Reservar" id="reservar" />
     				</form>
 				</fieldset> 

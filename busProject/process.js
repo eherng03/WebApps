@@ -1,3 +1,5 @@
+var destino;
+
 $(document).ready(function() {
     $('.dynamic').hide();
 
@@ -16,7 +18,7 @@ $(document).ready(function() {
     $('select').change(function(event) {
         $("#plazas").empty();
         var destinoSeleccionado = $(this).find(":selected");
-        var destino = destinoSeleccionado.text();
+        destino = destinoSeleccionado.text();
         if(destino === '-'){
             $('.dynamic').fadeOut();
         }else{
@@ -47,21 +49,64 @@ $(document).ready(function() {
                 }
                 i--;
             }
-            var asientos;
-            $.post("getPlazas.php", {ciudad: destino}, function(data){
-                asientos = JSON.parse(data);
-            });
+           
+            $.ajax({
+                type: 'POST',
+                url: 'getPlazas.php',
+                data: {'ciudad': destino},
+                success: function(data){
+                     var asientos = JSON.parse(data);
+                      for (var j = 0; j < asientos.length; j++) {
+                        var num = asientos[j];
+                        var name = '[id="'+ num +'"]'; 
+                        $(name).prop('disabled', true);
+                     };
+            }});
         }
         
     });
 
     $('#reservar').click(function() {
-        var datosFormulario = new FormData(document.getElementById('datosCliente'));
-       
-    });
-
-    $('input[type = checkbox]').click(function(event) {
         
+        var asientosSeleccionados = getAsientosSeleccionados();
+        if(asientosSeleccionados == null){
+            alert("Para hacer la reserva, debe seleccionar algún asiento.");
+        }else{
+            if($("#nombre").val() == "", $("#nif").val() == "", $("#email").val() == ""){
+                alert("Para hacer la reserva, debe introducir todos los datos de usuario.");
+            }else{
+                var formData = {
+                    name : $("#nombre").val(),
+                    nif: $("#nif").val(),
+                    email: $("#email").val()
+                }
+                var datosJSON = JSON.stringify({datosForm: formData, asientos: asientosSeleccionados, dest: destino});
+                $.ajax({
+                    type: 'POST',
+                    url: 'reservar.php',
+                    data: {'datos': datosJSON},
+                    success: function(msg) {
+                      alert(msg);
+                    }
+                });
+            }
+            
+        }
     });
-    
 });
+
+function getAsientosSeleccionados(){
+    var num = $('input[type = checkbox]:checked').length;
+    var asientosId = [];
+    if(num == 0){
+        return null;
+    }else{
+        var contador = 0;
+        var seleccionadas = $('input[type = checkbox]:checked');
+        for (var j = 0; j < seleccionadas.length; j++) {
+            asientosId[contador] = seleccionadas[j].id;
+            contador++;
+        }
+        return asientosId;  
+    }
+}

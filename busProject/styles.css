@@ -134,8 +134,8 @@ option{
     margin:30px;
     display: flex;
 }
-
-#botonAsiento{
+   
+input[type=checkbox]{
     width: 25px;
     height: 25px;
     background: #FFFFFF;
@@ -143,20 +143,22 @@ option{
     float: left;
     border: 2px solid #555;
     border-radius: 7px;
+    -webkit-appearance: initial;
+    appearance: initial;
 }
 
-   
-input[type=checkbox] + label{
-    display:inline-block;
-    width:19px;
-    height:19px; 
-    background:#FFFFFF left top no-repeat;  /*asiento no seleccionado*/
-}
-
-input[type=checkbox]:checked + label{
+input[type=checkbox]:checked{
     background:#FF6B6B;
 }
 
-.selected{
-    background: #FF6B6B;
+input[type=checkbox]:disabled{
+    background:#292929;
 }
+
+[type="checkbox"]:checked{
+    /* Heres your symbol replacement - this is a tick in Unicode. */
+    content: "";
+    color: #fff;
+
+}
+

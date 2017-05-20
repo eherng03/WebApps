@@ -11,7 +11,7 @@
 
     $asientos = array();
     while ($row = $result->fetch_array()){
-        array_push($asientos, new AsientoOcupado($row['destino'], $row['plaza'], $row['dni']));
+        array_push($asientos, $row['plaza']);
     }
     $instancia->closeConectionBBDD();
     
