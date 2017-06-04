@@ -52,6 +52,7 @@ class BBDD{
    function insertPlaza($destino, $asiento, $nif){
       $sql  = "INSERT INTO asientosocupados(destino, plaza, dni) VALUES ('$destino','$asiento','$nif')";
       $result = $this->conexion->query($sql);
+      return $result;
    }
 }
 ?>

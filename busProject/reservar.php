@@ -14,13 +14,22 @@
 
     $x = $instancia->insertCliente($nombre, $nif, $email);
 
+    
     $asientos = $datos->{"asientos"};
     $destino = $datos->{"dest"};
+    $cadena = "Se han reservado correctamente las plazas: ";
+    $error = false;
+    $contador = 0;
     for ($i = 0; $i < count($asientos); $i++) {
-        $instancia->insertPlaza($destino, $asientos[$i], $nif);
+        $y = $instancia->insertPlaza($destino, $asientos[$i], $nif);
+        if($y == 1){
+           $cadena .= "'$asientos[$i]', "; 
+           $contador++;
+        }
     }
-
-    
-
-    print_r($asientos);
+    if($contador == 0){
+        $cadena = "No se ha reservado ninguna plaza.";
+    }
+    print_r($cadena);
+     
 ?>
